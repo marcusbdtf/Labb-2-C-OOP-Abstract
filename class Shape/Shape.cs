@@ -118,7 +118,7 @@ namespace class_Shape
                 case 6: //2d
                     return new Triangle(size, center, third3); // needs 3 points can't give center a
 
-                default: throw new ArgumentOutOfRangeException();
+                default: throw new ArgumentOutOfRangeException(); // to fill all pathways
             }
 
         }
