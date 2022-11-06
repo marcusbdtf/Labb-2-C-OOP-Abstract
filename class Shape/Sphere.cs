@@ -10,22 +10,18 @@ namespace class_Shape
     public class Sphere : Shape3D
     {
         public Vector3 center;
-        public float radius;
-        public float area;
-        public float volume;
+        public float radius { get; }
+        public float area { get { return 4 * MathF.PI * radius * radius; } }
+        public float volume { get { return (4f / 3f) * MathF.PI * radius * radius * radius; } }
 
         public Sphere(Vector3 center)
         {
             this.center = center;
-            this.area = (4 * PI) * (float)Math.Pow(radius, 2);
-            this.volume = ((4 / 3) * PI) * (float)Math.Pow(radius, 3);
         }
         public Sphere(Vector3 center, float radius)
         {
             this.center = center; 
             this.radius = radius;
-            this.area = (4 * PI) * (float)Math.Pow(radius, 2);
-            this.volume = ((4 / 3) * PI) * (float)Math.Pow(radius, 3);
         }
 
         public override float Area => area;

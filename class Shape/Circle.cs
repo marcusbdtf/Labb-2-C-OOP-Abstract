@@ -14,25 +14,22 @@ namespace class_Shape
     public class Circle : Shape2D
     {
         public Vector2 center2;
+        
         public Vector3 center;
-        public float radius;
-        public float circumference;
-        public float area;
+        public float radius { get; }
+        public float circumference { get { return 2 * MathF.PI * radius; } }
+        public float area { get { return MathF.PI * radius * radius; } }
 
         public Circle(Vector2 center)
         {
             this.center2 = center;
             this.center = new Vector3(center.X, center.Y, 0.0f);
-            this.circumference = (radius * 2) * PI;
-            this.area = (float)Math.Pow(radius, 2.0f) * PI;
         }
         public Circle(Vector2 center, float radius)
         {
             this.center2 = center;
             this.center = new Vector3(center.X, center.Y, 0.0f);
             this.radius = radius;
-            this.circumference = (radius * 2) * PI;
-            this.area = (float)Math.Pow(radius, 2.0f) * PI; 
         }
         override public float Area => area;
 
