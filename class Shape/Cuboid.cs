@@ -21,8 +21,6 @@ namespace class_Shape
         {
             get { return size.X * size.Y * size.Z; }
         }
-
-
         public Cuboid(Vector3 center)
         {
             this.center = center;
